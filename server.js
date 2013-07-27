@@ -1,5 +1,13 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(80);
+var path = require('path');
+var express = require('express');
+var _ = require('underscore');
+
+var _config = {};
+_.defaults(_config, { port: 80 } );
+
+var app = express();
+app.set('views', __dirname + '/views');
+app.get('/', function(req, res){res.render('index.jade');});
+app.use(require('stylus').middleware(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.listen(_config.port);
