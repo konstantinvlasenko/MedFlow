@@ -1,11 +1,20 @@
-html
+html(ng-app="MyApp")
   head
-    link(rel="stylesheet", href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.common.min.css")
-    link(rel="stylesheet", href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.default.min.css")
-    script( type="text/javascript", src="http://code.jquery.com/jquery-1.9.1.min.js")
+    link(rel="stylesheet", href="//cdn.kendostatic.com/2013.1.319/styles/kendo.common.min.css")
+    link(rel="stylesheet", href="//cdn.kendostatic.com/2013.1.319/styles/kendo.default.min.css")
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css")
+
+    script( type="text/javascript", src="http://code.jquery.com/jquery-1.10.1.min.js")
+    script( type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js")
     script( type="text/javascript", src="http://cdn.kendostatic.com/2013.1.319/js/kendo.all.min.js")
-    script( type="text/javascript", src="http://underscorejs.org/underscore-min.js")
-    
+    script( type="text/javascript", src="javascript/angular-kendo.min.js")
+
+
+    script( type="text/javascript", src="http://documentcloud.github.io/underscore/underscore-min.js")
+
+    script
+        angular.module("MyApp", ["kendo.directives"])
+
     link(rel="stylesheet", href="stylesheets/main.css")
     script( type="text/javascript", src="javascript/app.js")
   body

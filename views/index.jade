@@ -1,6 +1,6 @@
 extends layout
 block content
-  #example.k-content
+  #example.k-content(ng-controller="MyCtrl")
       .demo-section
           #special-days
-              #calendar   
+              #calendar(kendo-calendar="", k-options="thingsOptions")
